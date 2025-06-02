@@ -32,7 +32,10 @@ function getComputerChoice() {
 
 }
 
-function playRound(humanPick, computerPick) {
+function playRound() {
+
+    const humanPick = getHumanChoice();
+    const computerPick = getComputerChoice();
 
     let winner = '';
 
@@ -66,25 +69,42 @@ function playRound(humanPick, computerPick) {
 
     }
 
-    if (winner === 'human') {
+    return winner;
 
-        humanScore++;
-        return winner;
+}
 
-    } else if (winner === 'computer') {
+function playGame() {
 
-        computerScore++;
-        return winner;
+    for (let i = 0; i < 5; i++) {
+        
+        const roundWinner = playRound();
 
-    } else if (winner === 'tie') {
+        if (roundWinner === 'human') {
 
-        return winner;
+            console.log('You win!');
+            humanScore++;
 
+        } else if (roundWinner === 'computer') {
+
+            console.log('You lost!');
+            computerScore++;
+
+        } else if (roundWinner === 'tie') {
+
+            console.log("It's a Tie!");
+
+        }
+        
+    }
+
+    if (humanScore > computerScore) {
+        console.log(`You WON ${humanScore}x! Congratulations! You won the entire game!`)
+    } else if (humanScore < computerScore) {
+        console.log(`You LOST! Computer won ${computerScore}x! You lost the entire game!`)
+    } else if (humanScore === computerScore) {
+        console.log('It was a TIE!');
     }
 
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-
-console.log(playRound(humanChoice, computerChoice));
+playGame();
