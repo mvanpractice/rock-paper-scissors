@@ -22,10 +22,10 @@
         <section class="mid">
             <button id="start-game" type="button">Start Game</button>
             <h2>Game Started!</h2>
-            <p>Round n / 5</p>
+            <p>Round <span id="current-round"></span> / 5</p>
             <p>First to get 3 wins.</p>
-            <p>Your Score: n</p>
-            <p>Computer Score: n</p>
+            <p>Your Score: <span id="your-score"></span></p>
+            <p>Computer Score: <span id="computer-score"></span></p>
             <button type="button">Abort</button>
             <div class="option">
                 <button id="rock" type="button">Rock</button>
@@ -35,7 +35,9 @@
         </section>
 
         <section class="btm">
-
+            <p>You picked: <span id="your-pick"></span></p>
+            <p>Computer picked: <span id="computer-pick"></span></p>
+            <p>Round <span id="round-count"></span> Winner: <span id="round-winner"></span></p>
         </section>
     </div>
 
