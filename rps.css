@@ -14,19 +14,3 @@ body {
 .container {
     margin-top: 20px;
 }
-
-.container section {
-    padding: 8px;
-}
-
-.container section button {
-    padding: 14px 18px;
-    border: none;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-}
-
-.container section button:hover {
-    background-color: rgba(0, 0, 0, 0.789);
-}
